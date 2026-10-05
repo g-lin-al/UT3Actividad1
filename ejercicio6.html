@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UT3Actividad1 Ejercicio 6</title>
+</head>
+<body>
+    <!-- Crea un programa que muestre la hora actual en diferentes formatos, según el valor que meta el usuario por parámetro
+    • 14:35:07 (hora detallada con minutos y segundos) 
+    • 02:35 PM o 02:35:07 AM (hora con minutos y AM o PM según sea antes o después del medio día) -->
+
+    <h1>¿Qué hora es?</h1>
+    <p>
+        <h2>Instrucciones:</h2>
+        <ul>
+            <li>Para ver la hora detallada, <b>introducir 1</b></li>
+            <li>Para ver sólamente hora y minutos, <b>introducir 2</b></li>
+        </ul>
+    </p>
+
+    <input type="text" id="valor" />
+    <button onclick="formatearHora()">Ver hora</button>
+
+    <p id="hora"></p>
+
+    <script>
+        function formatearHora() {
+            let $hora = new Date();
+            let $opcion = parseInt(document.getElementById("valor").value);
+
+            switch ($opcion) {
+                case 1:
+                    document.getElementById("hora").innerHTML = `${$hora.getHours()}:${$hora.getMinutes()}:${$hora.getSeconds()}`;
+                    break;
+                case 2:
+                    if ($hora.getHours() >= 12) {
+                        let $hora_modif = 0;
+                        $hora_modif = $hora.getHours() - 12;
+                        document.getElementById("hora").innerHTML = `${$hora_modif}:${$hora.getMinutes()} PM`;
+                        break;
+                    } else {
+                        document.getElementById("hora").innerHTML = `${$hora.getHours()}:${$hora.getMinutes()} AM`;
+                        break;
+                    }
+                default:
+                    document.getElementById("hora").innerHTML = "Lee bien las instrucciones, anda.";
+            }
+
+            }
+    </script>
+</body>
+</html>

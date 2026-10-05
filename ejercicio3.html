@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UT3Actividad1 Ejercicio 3</title>
+</head>
+<body>
+    <!-- Crea un programa que muestre el número de días que quedan desde hoy hasta el fin de curso (por ejemplo, el 21 de junio). Recuerda que los meses empiezan desde el número cero -->
+
+    <script>
+        let $fecha_hoy = new Date;
+        let $fecha_fin = new Date("2027/6/22");
+        let $milisegundos = $fecha_fin.getTime() - $fecha_hoy.getTime();
+        let $dias = $milisegundos / (1000 * 60 * 60 * 24);
+        $dias = parseInt($dias);
+
+        document.write(`Quedan ${$dias} días hasta final de curso.`);
+    </script>
+</body>
+</html>

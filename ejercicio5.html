@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UT3Actividad1 Ejercicio 5</title>
+</head>
+<body>
+    <!-- Crea un programa que pida por parámetro tu cumpleaños (no hace falta el año) y saque todos los años en que tu cumpleaños va a caer en domingo desde este año hasta el año 2100 -->
+
+    <script>
+        let $cumple_dia = parseInt(prompt("¿Día de tu cumpleaños?"));
+        let $cumple_mes = parseInt(prompt("¿Mes de tu cumpleaños?")) - 1;
+        let $anio_actual = new Date().getFullYear();
+        let $fecha_fin = new Date(2100, $cumple_mes, $cumple_dia);
+        let $fecha = new Date($anio_actual, $cumple_mes, $cumple_dia);
+
+        while ($fecha.getFullYear() <= $fecha_fin.getFullYear()) {
+            if ($fecha.getDay() == 6) {
+                document.write($fecha.toDateString(), "<br>");
+            }
+            $fecha.setFullYear($fecha.getFullYear() + 1);
+        }
+    </script>
+</body>
+</html>

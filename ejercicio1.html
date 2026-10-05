@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UT3Actividad1 Ejercicio 1</title>
+</head>
+<body>
+    <!-- Calcular la edad de una persona con objetos Date -->
+     
+    <script>
+        let $fecha = new Date("1995/12/28");
+        let $fecha_hoy = new Date; // new Date, sin fecha asociada, da la fecha actual
+        let $edad = 0;
+        $edad = $fecha_hoy.getFullYear() - $fecha.getFullYear();
+
+        if ($fecha.getMonth() > $fecha_hoy.getMonth()) {
+            --$edad;
+        } else if ($fecha.getMonth() == $fecha_hoy.getMonth()) {
+            if ($fecha.getDate() > $fecha_hoy.getDate()) {
+                --$edad;
+            }
+        }
+
+        document.write(`Tienes ${$edad} años.`);
+    </script>
+</body>
+</html>
