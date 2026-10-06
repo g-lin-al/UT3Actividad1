@@ -34,7 +34,7 @@
                     document.getElementById("hora").innerHTML = `${$hora.getHours()}:${$hora.getMinutes()}:${$hora.getSeconds()}`;
                     break;
                 case 2:
-                    if ($hora.getHours() >= 12) {
+                    if ($hora.getHours() > 12) {
                         let $hora_modif = 0;
                         $hora_modif = $hora.getHours() - 12;
                         document.getElementById("hora").innerHTML = `${$hora_modif}:${$hora.getMinutes()} PM`;
