@@ -9,7 +9,20 @@
     <!-- Realiza el mismo programa que el anterior, pero quitando los fines de semana -->
 
     <script>
-        
+        let hoy = new Date(), fin_curso = new Date(2027, 5, 21), dias = 0;
+
+        while (hoy < fin_curso) {
+            let dia_semana = hoy.getDay();
+
+            if (dia_semana != 0 && dia_semana != 6) {
+                dias++;
+            }
+
+            hoy.setDate(hoy.getDate() + 1);
+
+        }
+
+        document.write(`Quedan ${dias} días de clase sin fines de semana para el fin de curso.`);
     </script>
 </body>
 </html>
