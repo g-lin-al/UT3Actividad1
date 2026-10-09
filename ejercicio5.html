@@ -16,7 +16,7 @@
         let $fecha = new Date($anio_actual, $cumple_mes, $cumple_dia);
 
         while ($fecha.getFullYear() <= $fecha_fin.getFullYear()) {
-            if ($fecha.getDay() == 6) {
+            if ($fecha.getDay() == 0) {
                 document.write($fecha.toDateString(), "<br>");
             }
             $fecha.setFullYear($fecha.getFullYear() + 1);
